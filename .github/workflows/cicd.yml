@@ -50,10 +50,12 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
     - name: Build and push Docker image
-      run: |
-        docker build -t flask-hello-world -f DockerFile .
-        docker tag flask-hello-world:latest ${{ secrets.DOCKER_HUB_USERNAME }}/flask-hello-world:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/flask-hello-world:latest
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./DockerFile
+        push: true
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-app:latest
 
     - name: Summary of Actions
       run: |
@@ -61,6 +63,6 @@ jobs:
         echo "1. Checked out the code."
         echo "2. Set up Docker Buildx."
         echo "3. Logged in to Docker Hub."
-        echo "4. Built Docker image for the Flask application from Dockerfile."
+        echo "4. Built Docker image for the Flask application."
         echo "5. Tagged and pushed Docker image to Docker Hub."
         echo "CI/CD pipeline completed successfully!"
