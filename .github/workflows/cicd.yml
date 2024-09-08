@@ -53,9 +53,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        file: ./DockerFile
+        file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/flask-app:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerimagehub:latest  # Updated repository name
 
     - name: Summary of Actions
       run: |
