@@ -1,0 +1,1 @@
+This is a reddme file for mlops repository. we have created this repo for testing of this mlops application.
