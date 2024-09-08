@@ -53,9 +53,9 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        file: ./DockerFile
+        file: ./DockerFile  # Use correct case for DockerFile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/apil-app:latest  # Updated repository name
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/apil-app:latest  # Correctly formatted tag
 
     - name: Summary of Actions
       run: |
