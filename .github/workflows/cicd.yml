@@ -55,7 +55,7 @@ jobs:
         context: .
         file: ./DockerFile  # Correct filename
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/apil-app:latest  # Correct tag format
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/apil-testapp:latest  # Correct tag format
 
     - name: Summary of Actions
       run: |
