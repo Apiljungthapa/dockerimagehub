@@ -55,7 +55,7 @@ jobs:
         context: .
         file: ./DockerFile  # Correct filename
         push: true
-        tags: apil-testapp:latest
+        tags: apilthapa12/apil-testapp:latest
 
     - name: Summary of Actions
       run: |
