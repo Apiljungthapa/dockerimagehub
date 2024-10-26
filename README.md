@@ -1,1 +1,1 @@
-This is test done for  image.
+This is done for  image.
